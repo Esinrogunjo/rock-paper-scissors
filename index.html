@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCK-PAPER-SISSORS</title>
+</head>
+<body>
+
+    <script>
+                // function for computer play here
+                userWin = 0;
+                function computerPlay(){
+                    choose = Math.floor(Math.random()*3);
+
+                    return convert(choose);
+
+                    
+                }
+
+
+                function convert(choose){
+
+                    switch(choose){
+                        case 0:
+                            return('rock');
+
+                        case 1:
+                            return('paper');
+
+                        case 2:
+                            return('sissors');
+                    }
+
+
+                }
+
+
+                function game(playerSelection){
+                    
+                    result  = (playRound(playerSelection, computerPlay()));
+                    
+                    if(result === 1){
+                        userWin++;
+                    }
+
+                   
+                    
+
+                }
+
+                //play a single round here
+
+                function playRound(playerSelection, computerSelection) {
+                    computerSelection = computerPlay();
+
+                    playerSelection = playerSelection.toLowerCase();
+
+                    draw =0
+                    userCount = 0
+                    computerCount = 0;
+                    if(playerSelection === computerSelection)
+                        return 2;
+                    if(playerSelection =='paper' && computerSelection == 'rock'){
+                        return 1;
+                    }
+
+                    if(playerSelection =='rock' && computerSelection == 'paper'){
+                        return 0;
+                    }
+
+                    if(playerSelection =='sissors' && computerSelection == 'rock'){
+                        return 0;
+                    }
+
+                    if(playerSelection =='rock' && computerSelection == 'sissors'){
+                        return 1;
+                    }
+
+                    if(playerSelection =='paper' && computerSelection == 'sissors'){
+                        return 0;
+                    }
+
+                    if(playerSelection =='sissors' && computerSelection == 'paper'){
+                        return 1;
+                    }
+                  
+                }
+
+                function getUserInput() {
+
+                playerSelection = prompt("Enter Rock, Paper, or Scissors");
+
+                if (playerSelection == "rock" || playerSelection == "paper" || playerSelection == "scissors") {
+                    game(playerSelection);
+
+                } else {
+                    alert("Please enter Rock, Paper, or Scissors to continue!");
+                    getUserInput();
+                }
+                }
+
+               
+               for(i= 0; i<5; i++ ){
+
+                getUserInput();
+
+               }
+
+               console.log(userWin);
+               if(userWin>2){
+                   alert('You win the game');
+               }else{
+                   alert('You loose the game');
+               }
+
+               
+
+
+               
+
+
+
+                
+
+
+
+    </script>
+    
+</body>
+</html>
