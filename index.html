@@ -29,7 +29,7 @@
                             return('paper');
 
                         case 2:
-                            return('sissors');
+                            return('scissors');
                     }
 
 
@@ -69,19 +69,19 @@
                         return 0;
                     }
 
-                    if(playerSelection =='sissors' && computerSelection == 'rock'){
+                    if(playerSelection =='scissors' && computerSelection == 'rock'){
                         return 0;
                     }
 
-                    if(playerSelection =='rock' && computerSelection == 'sissors'){
+                    if(playerSelection =='rock' && computerSelection == 'scissors'){
                         return 1;
                     }
 
-                    if(playerSelection =='paper' && computerSelection == 'sissors'){
+                    if(playerSelection =='paper' && computerSelection == 'scissors'){
                         return 0;
                     }
 
-                    if(playerSelection =='sissors' && computerSelection == 'paper'){
+                    if(playerSelection =='scissors' && computerSelection == 'paper'){
                         return 1;
                     }
                   
